@@ -44,11 +44,11 @@ class CYMonitor {
   function process($user='.') {
     $changed = array();
     $domains = $this->read_domains($user);
-    print_r($domains);
+//    print_r($domains);
     foreach ($domains as $domain=>$cy) {
       $new_cy = $this->get_cy($domain);
       if ($new_cy==-1) break;
-      echo "New value: ".$domain." : ".$new_cy."\n";
+//      echo "New value: ".$domain." : ".$new_cy."\n";
       if ($new_cy!=$cy && $new_cy!=-1) {
         $changed[$domain] = array('old_cy'=>$cy,'new_cy'=>$new_cy);
         $domains[$domain]=$new_cy;
