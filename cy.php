@@ -108,11 +108,9 @@ $html.="</tr>\n";
     echo $text."\n";
 
     $headers ="From: ".$this->mime_encode('Мониторинг ТИц').'<'.MAIL_FROM.">\n";
-    $headers.="Return-Path: $return_path\n";
-    if (isset($maildata[$i]['reply'])) $headers.="Reply-To: ".$maildata[$i]['reply']."\n";
+    $headers.="Return-Path: ".MAIL_FROM."\n";
     $headers.="MIME-Version: 1.0\n";
-    if (empty($maildata[$i]['html'])) $headers.="Content-Type: text/plain; charset=utf-8\n";
-    else $headers.="Content-Type: text/plain; charset=\"utf-8\"\n";
+    $headers.="Content-Type: text/plain; charset=\"utf-8\"\n";
     $headers.="Content-Transfer-Encoding: 8bit\n";
     $headers.="Precedence: bulk\n";
     $headers.="X-Priority: 3\n";
